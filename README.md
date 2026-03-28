@@ -312,10 +312,82 @@ Phase 8    manual off-page
 - [ ] Phase 3.1 — VideoGame JSON-LD on all 10 game pages  
 - [ ] Phase 3.2 — WebSite + FAQPage JSON-LD on homepage  
 - [ ] Phase 4.1 — Core Web Vitals tracking  
-- [ ] Phase 5 — Unique page copy / duplicate differentiation  
-- [ ] Phase 6.1 — Visible FAQ section (homepage)  
-- [ ] Phase 6.2 — Related games sections (all 11 pages)  
-- [ ] Phase 7.1 — Regenerate sitemap.xml  
-- [ ] Phase 7.2 — Fix robots.txt  
-- [ ] Phase 7.3 — SEO audit script (`seo_verify.py`)  
-- [ ] Phase 8 — Manual off-page / GSC submission  
+- [x] Phase 1.1 — Domain migration (`fix_domain.py`)
+- [x] Phase 1.2 — Canonical URLs
+- [x] Phase 1.3 — Title rewrites (all 11 pages)
+- [x] Phase 1.4 — Meta description rewrites (all 11 pages)
+- [x] Phase 1.5 — Open Graph tags (all 11 pages)
+- [x] Phase 1.6 — Twitter Cards (all 11 pages)
+- [x] Phase 2.1 — Normalize thumbnails → `data/image/game/`
+- [x] Phase 2.2 — Homepage og-cover.png
+- [x] Phase 2.3 — Per-game og covers (11 × 1200×630)
+- [x] Phase 3.1 — VideoGame JSON-LD on all 10 game pages
+- [x] Phase 3.2 — WebSite + FAQPage JSON-LD on homepage
+- [x] Phase 4.1 — Core Web Vitals tracking
+- [ ] Phase 5 — Unique page copy / duplicate differentiation *(manual, pending)*
+- [x] Phase 6.1 — Visible FAQ section (homepage)
+- [x] Phase 6.2 — Related games sections (all 11 pages)
+- [x] Phase 7.1 — Regenerate sitemap.xml
+- [x] Phase 7.2 — Fix robots.txt
+- [x] Phase 7.3 — SEO audit script (`seo_verify.py`)
+- [ ] Phase 8 — Manual off-page / GSC submission *(not started)*
+
+---
+
+## Execution Status — Session 2 (Complete)
+
+> Last updated: 2026-03-28 | Commit: `515b7f6` | Branch: `main`
+
+### What Was Done
+
+All automated SEO phases were executed end-to-end:
+
+| Phase | Description | Status |
+|-------|-------------|--------|
+| 1 | Domain migration + canonical + OG + Twitter Cards (11 pages) | ✅ Done |
+| 2 | Thumbnail normalization (186×186) + OG covers (1200×630, 12 images) | ✅ Done |
+| 3 | VideoGame / WebSite / FAQPage JSON-LD structured data | ✅ Done |
+| 4 | Core Web Vitals tracking (LCP / CLS / INP → GA4 `G-THHTQLKSDJ`) | ✅ Done |
+| 5 | Unique body copy per page | ⏳ Pending (manual review needed) |
+| 6 | Visible FAQ accordion (homepage) + related game cards (all 11 pages) | ✅ Done |
+| 7 | Regenerate `sitemap.xml` + `robots.txt` + `seo_verify.py` (162/162 pass) | ✅ Done |
+| 8 | Off-page SEO / Google Search Console submission | ❌ Not started |
+
+### Audit Result
+
+```
+Pages: 11  |  Checks OK: 157  |  Issues: 0
+162/162 seo_verify.py assertions pass
+```
+
+All 11 pages pass every check:
+- Unique title with "Unblocked" keyword, ≤ 70 chars
+- Meta description 100–165 chars
+- Correct canonical URL (`geometrydash-lite2.poki2.online`)
+- `og:title`, `og:description`, `og:url`, `og:image` present and correct
+- `og:image` file exists on disk
+- `twitter:card` present
+- `VideoGame` JSON-LD on all game pages
+- `WebSite` + `FAQPage` JSON-LD on homepage
+- Related games section on all 11 pages
+- CWV tracking + GA4 ID on all 11 pages
+- Zero references to old domain (`geometrydash-lite2.github.io`) in any HTML/XML/txt
+
+### Assets Produced
+
+| Asset | Count |
+|-------|-------|
+| `data/image/game/{slug}/{slug}-m186x186.*` | 11 thumbnails |
+| `data/image/game/{slug}/{slug}-og.png` | 11 OG covers |
+| `og-cover.png` (homepage) | 1 |
+| Scripts in `scripts/` | 10 |
+| `docs/seo-audit-report.md` | 1 |
+
+### Remaining Work
+
+1. **Phase 5 — Body copy quality**: Each page has ~14–16 KB of body text. The text is present but has not been manually reviewed for thin or duplicated content. Recommend reading each page's `<main>` section and rewriting game-specific paragraphs to differentiate them.
+
+2. **Phase 8 — Google Search Console**:
+   - Submit `https://geometrydash-lite2.poki2.online/sitemap.xml`
+   - Request indexing for homepage and all 11 game pages
+   - Monitor Core Web Vitals report in GSC and GA4
