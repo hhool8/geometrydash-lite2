@@ -1171,3 +1171,189 @@ header {
         display: none;
     }
 }
+
+/* ===================================================================
+   poki2 Network Dark Theme — geometrydash-lite2.poki2.online
+   Appended overrides; do not edit above this line.
+   =================================================================== */
+
+:root {
+    --p2-primary:  #22d3ee;
+    --p2-accent:   #a855f7;
+    --p2-bg:       #0b0b18;
+    --p2-surface:  #12122b;
+    --p2-card:     #161627;
+    --p2-border:   rgba(255, 255, 255, 0.08);
+    --p2-text:     #e8e8f0;
+    --p2-muted:    #8892a4;
+    --p2-radius:   10px;
+}
+
+/* ── Body ── */
+body {
+    background-color: var(--p2-bg);
+    color: var(--p2-text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+/* ── Header / Nav ── */
+header {
+    background-image: none;
+    background-color: rgba(11, 11, 24, 0.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--p2-border);
+}
+
+.logo-text {
+    background: linear-gradient(135deg, var(--p2-primary) 0%, var(--p2-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    filter: none;
+    font-size: 1.2rem;
+    letter-spacing: 0.01em;
+}
+
+.menu-link {
+    color: var(--p2-muted);
+    text-shadow: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+.menu-link:hover {
+    background: rgba(34, 211, 238, 0.1);
+    color: var(--p2-primary);
+}
+
+/* Mobile hamburger icon */
+.icon-menu-mobile svg { fill: var(--p2-primary); }
+
+/* Mobile dropdown */
+.mobile-dropdown {
+    background: var(--p2-bg);
+    border-bottom: 1px solid var(--p2-border);
+}
+.nav-mobile-controler > ul > li {
+    background-color: var(--p2-surface);
+    border-bottom: 1px solid var(--p2-border);
+}
+.menu-link-mobile {
+    color: var(--p2-text);
+    text-shadow: none;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* ── Game grid ── */
+.uk-grid-clayover {
+    background: var(--p2-surface);
+    gap: 6px;
+    grid-template-columns: repeat(auto-fill, 110px);
+    grid-auto-rows: 110px;
+}
+
+.uk-game-link {
+    background-color: var(--p2-card);
+    border: 1px solid var(--p2-border);
+    border-radius: var(--p2-radius);
+}
+.uk-game-link:hover {
+    background: var(--p2-card);
+    border-color: var(--p2-primary) !important;
+    box-shadow: 0 0 14px 3px rgba(34, 211, 238, 0.3);
+}
+.uk-wrap-image {
+    background-color: var(--p2-surface);
+    border-radius: 8px 8px 0 0;
+}
+.uk-game-title {
+    background-color: rgba(11, 11, 24, 0.88);
+    font-size: 12px;
+}
+
+/* ── Content panels ── */
+.uk-p10 {
+    background: var(--p2-card);
+    border: 1px solid var(--p2-border);
+    border-radius: var(--p2-radius);
+}
+
+/* ── Game header bar (above iframe) ── */
+.header-game {
+    background-color: var(--p2-surface);
+    border-bottom: 1px solid var(--p2-border);
+}
+.header-game-extend > span:hover {
+    background-color: rgba(34, 211, 238, 0.12);
+}
+.box-header h1 {
+    color: var(--p2-text);
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+}
+
+/* ── Text area (article body) ── */
+.text-area {
+    color: var(--p2-muted);
+    line-height: 1.75;
+}
+.text-area a { color: var(--p2-primary); }
+.text-area h1, .text-area h2, .text-area h3,
+.text-area h4, .text-area h5, .text-area h6 {
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+.text-area strong { color: var(--p2-text); }
+
+/* ── Breadcrumbs ── */
+.bread-crumb-item { color: var(--p2-muted); font-size: 0.85rem; }
+a.bread-crumb-item:hover { color: var(--p2-primary); }
+
+/* ── Related games strip (below game iframe) ── */
+.related-games-section {
+    background: var(--p2-surface);
+    border: 1px solid var(--p2-border);
+    border-radius: var(--p2-radius);
+    padding: 16px;
+    margin-top: 12px;
+}
+.related-games-section h2 { color: #fff; }
+
+/* ── FAQ accordion ── */
+.faq-section details.faq-item {
+    background: var(--p2-card);
+    border: 1px solid var(--p2-border) !important;
+    border-radius: 8px;
+    color: var(--p2-text);
+}
+.faq-section details.faq-item summary { color: #fff; font-weight: 700; }
+.faq-section details.faq-item[open] summary {
+    color: var(--p2-primary);
+    border-bottom: 1px solid var(--p2-border);
+}
+.faq-section details.faq-item > div p { color: var(--p2-muted); }
+
+/* ── Stickers ── */
+.hot:after  { background-color: #ef4444; }
+.new:after  { background-color: var(--p2-accent); }
+
+/* ── Footer ── */
+footer {
+    background: #0d0d1f;
+    border-top: 1px solid rgba(168, 85, 247, 0.18);
+}
+footer nav { background: transparent !important; }
+footer nav a { color: var(--p2-muted) !important; }
+footer nav a:hover { color: var(--p2-primary) !important; }
+footer nav span { color: rgba(255, 255, 255, 0.2); }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--p2-bg); }
+::-webkit-scrollbar-thumb { background: rgba(34, 211, 238, 0.3); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--p2-primary); }
