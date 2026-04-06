@@ -1,0 +1,22 @@
+{
+  "name": "GD Lite 2 – Geometry Dash Unblocked",
+  "short_name": "GD Lite 2",
+  "description": "Play Geometry Dash Lite and 10 free unblocked rhythm platformer games in your browser.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0b18",
+  "theme_color": "#1d1d2e",
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "/rs/imgs/geometry-dash-lite.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/rs/imgs/geometry-dash-lite.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
