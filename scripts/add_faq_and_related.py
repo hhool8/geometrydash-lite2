@@ -53,7 +53,7 @@ def faq_html():
 '''
     return f'''
 <!-- {FAQ_SENTINEL} -->
-<section class="faq-section" itemscope itemtype="https://schema.org/FAQPage" style="max-width:900px;margin:40px auto;padding:0 20px">
+<section class="faq-section" style="max-width:900px;margin:40px auto;padding:0 20px">
   <h2 style="font-size:1.4rem;margin-bottom:16px">Frequently Asked Questions</h2>
 {items_html.rstrip()}
 </section>
